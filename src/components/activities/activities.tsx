@@ -30,7 +30,7 @@ const activities: Activity[] = [
       "Everyone you will ever meet knows something you do not. That is why we arrange several study circles per month where we meet each other and discuss certain topics related to astronomy.",
     icon: <BookOpen className="w-8 h-8" />,
     color: "from-blue-400 to-cyan-300",
-    image: "/images/astrocode.webp",
+    image: "/images/studycircle.webp",
   },
   {
     id: "astro-carnival",
@@ -40,7 +40,7 @@ const activities: Activity[] = [
       "We organize an Astro carnival once a year for all the high school and college students of Sylhet. Their participation in the carnival makes our work worthwhile. Their curious eyes tell the rest.",
     icon: <Calendar className="w-8 h-8" />,
     color: "from-orange-400 to-yellow-300",
-    image: "/images/studycircle.webp",
+    image: "/images/astrocarnival.webp",
   },
   {
     id: "cosmania",
