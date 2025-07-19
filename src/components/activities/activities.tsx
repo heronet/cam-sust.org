@@ -30,7 +30,7 @@ const activities: Activity[] = [
       "Everyone you will ever meet knows something you do not. That is why we arrange several study circles per month where we meet each other and discuss certain topics related to astronomy.",
     icon: <BookOpen className="w-8 h-8" />,
     color: "from-blue-400 to-cyan-300",
-    image: "/images/astrocode.jpg",
+    image: "/images/astrocode.webp",
   },
   {
     id: "astro-carnival",
@@ -40,7 +40,7 @@ const activities: Activity[] = [
       "We organize an Astro carnival once a year for all the high school and college students of Sylhet. Their participation in the carnival makes our work worthwhile. Their curious eyes tell the rest.",
     icon: <Calendar className="w-8 h-8" />,
     color: "from-orange-400 to-yellow-300",
-    image: "/images/studycircle.jpg",
+    image: "/images/studycircle.webp",
   },
   {
     id: "cosmania",
@@ -50,7 +50,7 @@ const activities: Activity[] = [
       "If you have the knowledge, let others light their candles in it. Spreading knowledge in different places will gather new experiences. We organize school programs in different schools throughout the country since we are trying to spread the curiosity to look at the night sky.",
     icon: <Users className="w-8 h-8" />,
     color: "from-green-400 to-emerald-300",
-    image: "/images/cosmania.jpg",
+    image: "/images/cosmania.webp",
   },
   {
     id: "star-gazing",
@@ -60,7 +60,7 @@ const activities: Activity[] = [
       "We can't look up into the Universe without wondering what's out there. Looking at stars, planets, galaxies, and nebulae and realize that we're just one tiny part of that. Sometimes, we CAM people, gaze into the night sky with a telescope but regularly we do naked eye star gazing.",
     icon: <Eye className="w-8 h-8" />,
     color: "from-indigo-400 to-blue-300",
-    image: "/images/stargazing.jpg",
+    image: "/images/stargazing.webp",
   },
   {
     id: "world-space-week",
@@ -70,7 +70,7 @@ const activities: Activity[] = [
       "From 4th to 10th October we celebrate 'World Space Week (WSW)' with the whole world through many events. Documentary shows, Seminars and film shows on astronomy are arranged to celebrate this week.",
     icon: <Globe className="w-8 h-8" />,
     color: "from-teal-400 to-cyan-300",
-    image: "/images/spaceweek.jpg",
+    image: "/images/spaceweek.webp",
   },
   {
     id: "seminar",
@@ -80,7 +80,7 @@ const activities: Activity[] = [
       "We also organize seminars on various interesting topics and approach the best scholars who will inspire us and enlighten us with their knowledge.",
     icon: <GraduationCap className="w-8 h-8" />,
     color: "from-violet-400 to-purple-300",
-    image: "/images/seminar.jpg",
+    image: "/images/seminar.webp",
   },
 ];
 
