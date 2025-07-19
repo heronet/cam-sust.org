@@ -39,7 +39,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] flex items-center overflow-hidden">
+    <div className="relative min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] flex flex-col-reverse lg:flex-row items-center overflow-hidden">
       {/* Animated Stars Background */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(100)].map((_, i) => (
@@ -62,40 +62,40 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Left Content */}
+      {/* Content Container */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative items-start z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl"
+        className="relative items-start z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl lg:max-w-none"
       >
         {/* CAM-SUST Header */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <div className="text-indigo-300 text-xl md:text-2xl font-bold tracking-widest mb-3">
+        <motion.div variants={itemVariants} className="mb-6 lg:mb-8">
+          <div className="text-indigo-300 text-lg md:text-xl lg:text-2xl font-bold tracking-widest mb-3">
             CAM-SUST
           </div>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-indigo-500 to-indigo-800 mb-4"></div>
-          <div className="text-neutral-300 text-base md:text-lg font-light mb-2">
+          <div className="w-20 lg:w-24 h-0.5 bg-gradient-to-r from-indigo-500 to-indigo-800 mb-4"></div>
+          <div className="text-neutral-300 text-sm md:text-base lg:text-lg font-light mb-2">
             Celestial Astronomy & Research Organization
           </div>
-          <div className="text-neutral-400 text-sm">
+          <div className="text-neutral-400 text-xs md:text-sm">
             Shahjalal University of Science & Technology
           </div>
         </motion.div>
 
         {/* Main Title */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-4 leading-tight">
+        <motion.div variants={itemVariants} className="mb-6 lg:mb-8">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-4 leading-tight">
             EXPLORE
           </h1>
-          <h2 className="text-xl md:text-3xl font-light text-neutral-300 mb-6">
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-light text-neutral-300 mb-6">
             The Universe Through Science
           </h2>
         </motion.div>
 
         {/* Mission Statement */}
-        <motion.div variants={itemVariants} className="mb-10">
-          <p className="text-neutral-200 text-base md:text-lg leading-relaxed font-light">
+        <motion.div variants={itemVariants} className="mb-8 lg:mb-10">
+          <p className="text-neutral-200 text-sm md:text-base lg:text-lg leading-relaxed font-light">
             Where <span className="text-blue-400 font-medium">curiosity</span>{" "}
             meets the{" "}
             <span className="text-purple-400 font-medium">cosmos</span>. Join
@@ -108,7 +108,7 @@ export default function Hero() {
         {/* Impact Numbers */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-3 gap-4 mb-10"
+          className="grid grid-cols-3 gap-3 lg:gap-4 mb-8 lg:mb-10"
         >
           {[
             { number: "300+", label: "Active Members" },
@@ -117,11 +117,11 @@ export default function Hero() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-3 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:bg-white/[0.05] transition-all duration-300"
+              className="text-center p-2 lg:p-3 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:bg-white/[0.05] transition-all duration-300"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="text-xl md:text-2xl font-bold text-blue-400 mb-1">
+              <div className="text-lg md:text-xl lg:text-2xl font-bold text-blue-400 mb-1">
                 {stat.number}
               </div>
               <div className="text-neutral-400 text-xs md:text-sm font-light">
@@ -135,8 +135,11 @@ export default function Hero() {
         <ExploreBtn />
 
         {/* Scroll Indicator */}
-        <motion.div variants={itemVariants} className="flex items-center">
-          <p className="text-neutral-500 text-sm mr-4 font-light">
+        <motion.div
+          variants={itemVariants}
+          className="flex items-center mt-8 lg:mt-0"
+        >
+          <p className="text-neutral-500 text-xs md:text-sm mr-4 font-light">
             Discover more about us
           </p>
           <motion.div
@@ -153,8 +156,8 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Right Side - Solar System */}
-      <div className="relative flex-1 h-screen flex items-center justify-center overflow-hidden">
+      {/* Solar System - Right Side */}
+      <div className="flex relative flex-1 lg:h-screen items-center justify-center">
         {/* Solar System Container */}
         <motion.div
           className="relative w-full h-full max-w-3xl"
