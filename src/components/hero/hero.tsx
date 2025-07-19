@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { easeOut, motion } from "motion/react";
 import ExploreBtn from "./explore-btn";
+import { StarField } from "./starfield";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -41,26 +42,7 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] flex flex-col-reverse lg:flex-row items-center overflow-hidden">
       {/* Animated Stars Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(100)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-0.5 h-0.5 bg-white rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0.1, 0.8, 0.1],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-          />
-        ))}
-      </div>
+      <StarField />
 
       {/* Content Container */}
       <motion.div
