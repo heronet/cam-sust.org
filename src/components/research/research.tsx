@@ -186,7 +186,10 @@ const ResearchPapers: React.FC = () => {
   }, [filteredPapers, sortBy]);
 
   return (
-    <div className="min-h-screen bg-black/[0.96] antialiased text-white">
+    <div
+      className="min-h-screen bg-black/[0.96] antialiased text-white"
+      id="research"
+    >
       <div className="relative z-10 pt-12">
         {/* Header */}
         <Header
