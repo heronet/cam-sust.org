@@ -11,7 +11,7 @@ const Magazine = () => {
     description:
       "The astronomy magazine ‘নভোখেয়া’ is published by Copernicus Astronomical Memorial of SUST, an Astronomy Research and Outreach Organization of Shahjalal University of Science and Technology. This is the first issue of the magazine. It is available for anyone to download from here.",
     coverImage: "/images/magazine/novokheya-cover.webp",
-    pdfUrl: "https://cam-sust.org/Novokheya.pdf",
+    pdfUrl: "https://cam-sust.org/files/magazine/Novokheya.pdf",
     pages: 51,
     downloads: "500+",
     authors: 6,
