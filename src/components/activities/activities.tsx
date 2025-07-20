@@ -10,6 +10,7 @@ import {
   Globe,
   GraduationCap,
 } from "lucide-react";
+import Header from "../common/header";
 
 interface Activity {
   id: string;
@@ -166,25 +167,11 @@ const Activities: React.FC = () => {
 
       <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <motion.h3
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl font-bold text-white mb-4"
-          >
-            Regular Activities
-          </motion.h3>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Exploring the cosmos through education, observation, and community
-            engagement
-          </p>
-        </motion.div>
+        <Header
+          title="Regular Activities"
+          subtitle="Exploring the cosmos through education, observation, and community
+        engagement"
+        />
 
         {/* Activities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

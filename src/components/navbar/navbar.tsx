@@ -1,5 +1,5 @@
 import { FloatingNav } from "../ui/floating-navbar";
-import { Home, School, Activity } from "lucide-react";
+import { Home, School, Activity, Book } from "lucide-react";
 
 export default function Navbar() {
   const navItems = [
@@ -13,7 +13,11 @@ export default function Navbar() {
       link: "#activities",
       icon: <Activity className="h-4 w-4 text-white" />,
     },
-
+    {
+      name: "Magazine",
+      link: "#magazine",
+      icon: <Book className="h-4 w-4 text-white" />,
+    },
     {
       name: "Research",
       link: "#research",

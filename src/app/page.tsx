@@ -1,5 +1,6 @@
 import Activities from "@/components/activities/activities";
 import Hero from "@/components/hero/hero";
+import Magazine from "@/components/magazine/magazine";
 import Navbar from "@/components/navbar/navbar";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Activities />
+      <Magazine />
     </main>
   );
 }
