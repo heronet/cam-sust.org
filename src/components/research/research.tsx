@@ -9,6 +9,7 @@ import {
   ExternalLink,
   BookOpen,
 } from "lucide-react";
+import Header from "../common/header";
 
 interface ResearchPaper {
   id: string;
@@ -133,23 +134,6 @@ const categories = [
   "Tools and Techniques",
 ];
 
-// Header Component
-const Header: React.FC<{ title: string; subtitle: string }> = ({
-  title,
-  subtitle,
-}) => (
-  <section className="relative px-6 py-16 mb-8">
-    <div className="max-w-6xl mx-auto text-center">
-      <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white via-slate-200 to-gray-400 bg-clip-text text-transparent mb-6">
-        {title}
-      </h1>
-      <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        {subtitle}
-      </p>
-    </div>
-  </section>
-);
-
 const ResearchPapers: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -186,11 +170,8 @@ const ResearchPapers: React.FC = () => {
   }, [filteredPapers, sortBy]);
 
   return (
-    <div
-      className="min-h-screen bg-black/[0.96] antialiased text-white"
-      id="research"
-    >
-      <div className="relative z-10 pt-12">
+    <div className="min-h-screen bg-black/[0.96] antialiased" id="research">
+      <div className="relative z-10 pt-16">
         {/* Header */}
         <Header
           title="Research Papers"
