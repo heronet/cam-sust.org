@@ -7,7 +7,7 @@ const Magazine = () => {
     title: "Novokheya",
     subtitle: "নভোখেয়া - A CAM-SUST Magazine",
     issue: "Inaugural Issue",
-    date: "2024",
+    date: "2025",
     description:
       "The astronomy magazine ‘নভোখেয়া’ is published by Copernicus Astronomical Memorial of SUST, an Astronomy Research and Outreach Organization of Shahjalal University of Science and Technology. This is the first issue of the magazine. It is available for anyone to download from here.",
     coverImage: "/images/magazine/novokheya-cover.webp",
@@ -148,6 +148,7 @@ const Magazine = () => {
                   <div className="flex flex-col sm:flex-row gap-4 pt-6">
                     <a
                       href={magazine.pdfUrl}
+                      download
                       className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
