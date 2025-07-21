@@ -66,6 +66,7 @@ const samplePapers: ResearchPaper[] = [
     downloadUrl: "https://cam-sust.org/files/papers/image.pdf",
     citations: 47,
     tags: ["Normalization", "FITS", "Noise Reduction", "Composite", "Blending"],
+    doi: "10.48550/arXiv.2410.06573",
     journalImage: "/images/papers/image-processing.webp",
   },
   {
@@ -90,7 +91,6 @@ const samplePapers: ResearchPaper[] = [
       "Comoving Distance",
       "Hubble Distance",
     ],
-    doi: "10.48550/arXiv.2410.06573",
     journalImage: "/images/papers/correlation-study.webp",
   },
   {
