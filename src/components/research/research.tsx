@@ -45,7 +45,6 @@ const samplePapers: ResearchPaper[] = [
       "H-R Diagram",
       "Stellar Evolution",
     ],
-    journal: "Astrophysical Journal",
     journalImage: "/images/papers/exploring.webp",
   },
   {
@@ -67,7 +66,6 @@ const samplePapers: ResearchPaper[] = [
     downloadUrl: "https://cam-sust.org/files/papers/image.pdf",
     citations: 47,
     tags: ["Normalization", "FITS", "Noise Reduction", "Composite", "Blending"],
-    journal: "Astrophysical Journal",
     journalImage: "/images/papers/image-processing.webp",
   },
   {
@@ -83,7 +81,7 @@ const samplePapers: ResearchPaper[] = [
     abstract:
       "The vast distance between objects in the universe can be directly calculated by observing it's spectra. The red-shift of the object due to the Hubble flow helps to find the relativistic distance (DS ) of the object. The cosmological parameters ΩM , Ωk and ΩΛ could be used to calculate the co-moving distance (DC ), the angular distance (DA) and the luminosity distance (DL). The focus of this report was to take spectra of four galaxies and calculate the relativistic distance by identifying the location of the Hα and Hβ lines. DC , DA and DL were calculated with cosmological parameters with ΩΛ = 0.6847 ±0.0073,ΩM = 0.3153 ± 0.0073,Ωk = 0.001 ±0.002 and the Hubble constant H0 = 72 (km/s)/MPc",
     publishDate: "2024-10-9",
-    category: "Stellar Physics",
+    category: "Galactic Astronomy",
     downloadUrl: "https://cam-sust.org/files/papers/correlation.pdf",
     citations: 47,
     tags: [
@@ -92,7 +90,7 @@ const samplePapers: ResearchPaper[] = [
       "Comoving Distance",
       "Hubble Distance",
     ],
-    journal: "Monthly Notices of the Royal Astronomical Society",
+    doi: "10.48550/arXiv.2410.06573",
     journalImage: "/images/papers/correlation-study.webp",
   },
   {
@@ -118,7 +116,6 @@ const samplePapers: ResearchPaper[] = [
       "Black Hole Mass",
       "Spectroscopy",
     ],
-    journal: "Astronomy & Astrophysics",
     doi: "10.13140/RG.2.2.14243.22567",
     journalImage: "/images/papers/agnreport.webp",
   },
