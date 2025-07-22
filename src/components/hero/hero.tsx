@@ -49,7 +49,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative items-start z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl lg:max-w-none"
+        className="relative items-start mt-4 z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl lg:max-w-none"
       >
         {/* CAM-SUST Header */}
         <motion.div variants={itemVariants} className="mb-6 lg:mb-8">
@@ -58,7 +58,7 @@ export default function Hero() {
           </div>
           <div className="w-20 lg:w-24 h-0.5 bg-gradient-to-r from-indigo-500 to-indigo-800 mb-4"></div>
           <div className="text-neutral-300 text-sm md:text-base lg:text-lg font-light mb-2">
-            Celestial Astronomy & Research Organization
+            Astronomy Research & Outreach Organization
           </div>
           <div className="text-neutral-400 text-xs md:text-sm">
             Shahjalal University of Science & Technology
