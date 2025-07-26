@@ -38,8 +38,8 @@ const Footer: React.FC = () => {
               <span>Astronomy Research & Outreach Organization</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Copernicus Astronomical Memorial - The only astronomy club of
-              SUST. Exploring the cosmos through education, observation, and
+              Copernicus Astronomical Memorial - The only astronomy organization
+              of SUST. Exploring the cosmos through education, observation, and
               community engagement.
             </p>
           </div>
