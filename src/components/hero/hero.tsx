@@ -272,14 +272,14 @@ export default function Hero() {
           </motion.div>
 
           {/* Asteroid Belt */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full">
-            {[...Array(24)].map((_, i) => (
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[26rem] h-[26rem] rounded-full">
+            {[...Array(48)].map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute w-0.5 h-0.5 bg-gray-600 rounded-full"
                 style={{
-                  left: `${50 + 40 * Math.cos((i * 15 * Math.PI) / 180)}%`,
-                  top: `${50 + 40 * Math.sin((i * 15 * Math.PI) / 180)}%`,
+                  left: `${50 + 40 * Math.cos((i * 7.5 * Math.PI) / 180)}%`,
+                  top: `${50 + 40 * Math.sin((i * 7.5 * Math.PI) / 180)}%`,
                 }}
                 animate={{ rotate: 360 }}
                 transition={{
