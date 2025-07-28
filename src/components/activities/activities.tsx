@@ -11,6 +11,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import Header from "../common/header";
+import Link from "next/link";
 
 interface Activity {
   id: string;
@@ -151,10 +152,7 @@ const ActivityCard: React.FC<{ activity: Activity; index: number }> = ({
 
 const Activities: React.FC = () => {
   return (
-    <div
-      className="min-h-screen bg-black relative overflow-hidden"
-      id="activities"
-    >
+    <div className="min-h-screen  relative overflow-hidden" id="activities">
       {/* Star Field Background */}
       {/* <StarField /> */}
 
@@ -174,11 +172,43 @@ const Activities: React.FC = () => {
         />
 
         {/* Activities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {activities.map((activity, index) => (
             <ActivityCard key={activity.id} activity={activity} index={index} />
           ))}
         </div>
+
+        {/* See All Activities Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center"
+        >
+          <Link
+            href="/activities"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-400 to-cyan-300 text-black font-semibold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-400/25 group"
+          >
+            <span className="mr-2">Explore All Activities</span>
+            <svg
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
+          <p className="text-gray-400 text-sm mt-4 max-w-md mx-auto">
+            Discover our complete range of educational programs, workshops, and
+            community events
+          </p>
+        </motion.div>
       </div>
 
       {/* Bottom Gradient Fade */}

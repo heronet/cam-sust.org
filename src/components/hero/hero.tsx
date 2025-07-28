@@ -40,7 +40,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-grid-white/[0.02] flex flex-col-reverse lg:flex-row items-center overflow-hidden">
+    <div className="relative w-full bg-grid-white/[0.02] flex flex-col-reverse lg:flex-row items-center overflow-hidden">
       {/* Animated Stars Background */}
       <StarField />
 
@@ -49,7 +49,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative items-start mt-4 z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl lg:max-w-none"
+        className="relative items-start z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl lg:max-w-none"
       >
         {/* CAM-SUST Header */}
         <motion.div variants={itemVariants} className="mb-6 lg:mb-8">
