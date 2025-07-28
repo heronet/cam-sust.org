@@ -31,6 +31,11 @@ export default function NavbarDemo() {
       link: "/#research",
       icon: <School className="h-4 w-4 text-white" />,
     },
+    {
+      name: "Summer School",
+      link: "https://summer-school.cam-sust.org",
+      icon: <School className="h-4 w-4 text-white" />,
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
