@@ -335,7 +335,7 @@ const Activities: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="relative overflow-hidden">
       <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Header */}
         {/* <Header

@@ -40,7 +40,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] flex flex-col-reverse lg:flex-row items-center overflow-hidden">
+    <div className="relative min-h-screen w-full bg-grid-white/[0.02] flex flex-col-reverse lg:flex-row items-center overflow-hidden">
       {/* Animated Stars Background */}
       <StarField />
 

@@ -10,29 +10,25 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { Home, Activity, Book, School } from "lucide-react";
+import { Home, Activity, School } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function NavbarDemo() {
   const navItems = [
     {
       name: "Home",
-      link: "#",
+      link: "/",
       icon: <Home className="h-4 w-4 text-white" />,
     },
     {
       name: "Activities",
-      link: "#activities",
+      link: "/activities",
       icon: <Activity className="h-4 w-4 text-white" />,
     },
     {
-      name: "Magazine",
-      link: "#magazine",
-      icon: <Book className="h-4 w-4 text-white" />,
-    },
-    {
       name: "Research",
-      link: "#research",
+      link: "/#research",
       icon: <School className="h-4 w-4 text-white" />,
     },
   ];
@@ -71,14 +67,14 @@ export default function NavbarDemo() {
           onClose={() => setIsMobileMenuOpen(false)}
         >
           {navItems.map((item, idx) => (
-            <a
+            <Link
               key={`mobile-link-${idx}`}
               href={item.link}
               onClick={() => setIsMobileMenuOpen(false)}
               className="relative text-neutral-600 dark:text-neutral-300"
             >
               <span className="block">{item.name}</span>
-            </a>
+            </Link>
           ))}
           <div className="flex w-full flex-col gap-4">
             <NavbarButton
