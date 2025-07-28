@@ -33,7 +33,7 @@ export default function NavbarDemo() {
     },
     {
       name: "Summer School",
-      link: "https://summer-school.cam-sust.org",
+      link: "https://summerschool.cam-sust.org",
       icon: <School className="h-4 w-4 text-white" />,
     },
   ];
