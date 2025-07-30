@@ -71,31 +71,34 @@ export default function Hero() {
             EXPLORE
           </h1>
           <h2 className="text-lg md:text-2xl lg:text-3xl font-light text-neutral-300 mb-6">
-            The Universe Through Science
+            The Universe with CAM-SUST
           </h2>
         </motion.div>
 
         {/* Mission Statement */}
         <motion.div variants={itemVariants} className="mb-8 lg:mb-10">
           <p className="text-neutral-200 text-sm md:text-base lg:text-lg leading-relaxed font-light">
-            Where <span className="text-blue-400 font-medium">curiosity</span>{" "}
-            meets the{" "}
-            <span className="text-purple-400 font-medium">cosmos</span>. Join
-            our community of stargazers, learners, researchers, and volunteers
-            as we explore the universe through observation, discussion, and
-            collective discovery.
+            Copernicus Astronomical Memorial of SUST (CAM-SUST) is the only
+            astronomy{" "}
+            <span className="text-blue-400 font-medium">research</span> and{" "}
+            <span className="text-purple-400 font-medium">outreach</span>{" "}
+            organization of Shahjalal University of Science and Technology
+            (SUST), Bangladesh. Join our community of curious minds as we are
+            pursuing the infinity together
           </p>
         </motion.div>
 
         {/* Impact Numbers */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-3 gap-3 lg:gap-4 mb-8 lg:mb-10"
+          className="lg:grid flex flex-wrap lg:grid-cols-5 gap-3 lg:gap-4 mb-8 lg:mb-10"
         >
           {[
-            { number: "300+", label: "Active Members" },
-            { number: "10+", label: "Research Projects" },
             { number: "13", label: "Years of Excellence" },
+            { number: "67+", label: "Study Circle" },
+            { number: "9", label: "Cosmania" },
+            { number: "4", label: "Astro Carnival" },
+            { number: "4", label: "Research Paper" },
           ].map((stat, index) => (
             <motion.div
               key={index}

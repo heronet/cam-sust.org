@@ -6,9 +6,9 @@ import {
   BookOpen,
   Calendar,
   Users,
-  Eye,
-  Globe,
   GraduationCap,
+  Mic,
+  Star,
 } from "lucide-react";
 import Header from "../common/header";
 import Link from "next/link";
@@ -29,57 +29,57 @@ const activities: Activity[] = [
     title: "STUDY CIRCLE",
     subtitle: "Share knowledge, Increase knowledge",
     description:
-      "Everyone you will ever meet knows something you do not. That is why we arrange several study circles per month where we meet each other and discuss certain topics related to astronomy.",
+      "Everyone you will ever meet knows something you do not. That is why we arrange several study circles per month where we meet each other and discuss certain topics related to astronomy",
     icon: <BookOpen className="w-8 h-8" />,
     color: "from-blue-400 to-cyan-300",
     image: "/images/studycircle.webp",
-  },
-  {
-    id: "astro-carnival",
-    title: "ASTRO CARNIVAL",
-    subtitle: "Learning in a festive way",
-    description:
-      "We organize an Astro carnival once a year for all the high school and college students of Sylhet. Their participation in the carnival makes our work worthwhile. Their curious eyes tell the rest.",
-    icon: <Calendar className="w-8 h-8" />,
-    color: "from-orange-400 to-yellow-300",
-    image: "/images/astrocarnival.webp",
   },
   {
     id: "cosmania",
     title: "COSMANIA",
     subtitle: "Spread what you know",
     description:
-      "If you have the knowledge, let others light their candles in it. Spreading knowledge in different places will gather new experiences. We organize school programs in different schools throughout the country since we are trying to spread the curiosity to look at the night sky.",
+      "If you have the knowledge, let others light their candles in it. That is why we organize school programs in different schools & colleges throughout the country since we are trying to spread curiosity among all",
     icon: <Users className="w-8 h-8" />,
     color: "from-green-400 to-emerald-300",
     image: "/images/cosmania.webp",
+  },
+  {
+    id: "astro-carnival",
+    title: "ASTRO CARNIVAL",
+    subtitle: "Learning in a festive way",
+    description:
+      "We organize an Astro carnival once a year for all school, college, madrasa and university students throughout the country. Their participation in the carnival makes our work worthwhile. Their curious eyes tell the rest",
+    icon: <Calendar className="w-8 h-8" />,
+    color: "from-orange-400 to-yellow-300",
+    image: "/images/astrocarnival.webp",
   },
   {
     id: "star-gazing",
     title: "STAR GAZING",
     subtitle: "Catch a glimpse of the stars",
     description:
-      "We can't look up into the Universe without wondering what's out there. Looking at stars, planets, galaxies, and nebulae and realize that we're just one tiny part of that. Sometimes, we CAM people, gaze into the night sky with a telescope but regularly we do naked eye star gazing.",
-    icon: <Eye className="w-8 h-8" />,
+      "Looking at stars, planets, galaxies, and nebulae we realize that we're just one tiny part of that. Sometimes, we CAM people, gaze into the night sky with a telescope but regularly we do naked-eye stargazing",
+    icon: <Star className="w-8 h-8" />,
     color: "from-indigo-400 to-blue-300",
     image: "/images/stargazing.webp",
   },
   {
-    id: "world-space-week",
-    title: "WORLD SPACE WEEK",
-    subtitle: "Exploring the universe",
+    id: "cam-talk",
+    title: "CAM-TALK",
+    subtitle: "Conversations that inspire",
     description:
-      "From 4th to 10th October we celebrate 'World Space Week (WSW)' with the whole world through many events. Documentary shows, Seminars and film shows on astronomy are arranged to celebrate this week.",
-    icon: <Globe className="w-8 h-8" />,
+      "We are eager to learn more from experts. That is why we invite guest speakers from reputable institutions to share and discuss their expertise, works, and points of view during this event.",
+    icon: <Mic className="w-8 h-8" />,
     color: "from-teal-400 to-cyan-300",
     image: "/images/spaceweek.webp",
   },
   {
-    id: "seminar",
-    title: "SEMINAR",
-    subtitle: "We are also the learner",
+    id: "journal-club",
+    title: "JOURNAL CLUB",
+    subtitle: "Where research meets curiosity",
     description:
-      "We also organize seminars on various interesting topics and approach the best scholars who will inspire us and enlighten us with their knowledge.",
+      "We want to learn about the important and recent works on astronomy. That is why we arrange regular journal talks to discuss and analyze recent astronomical research papers and publications",
     icon: <GraduationCap className="w-8 h-8" />,
     color: "from-violet-400 to-purple-300",
     image: "/images/seminar.webp",

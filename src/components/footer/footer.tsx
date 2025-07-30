@@ -1,5 +1,14 @@
 import React from "react";
-import { Mail, Facebook, MapPin, Calendar } from "lucide-react";
+import {
+  Mail,
+  Facebook,
+  MapPin,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Youtube,
+  Phone,
+} from "lucide-react";
 
 const Footer: React.FC = () => {
   const socials = [
@@ -7,6 +16,26 @@ const Footer: React.FC = () => {
       icon: Facebook,
       href: "https://www.facebook.com/camsust",
       color: "hover:text-blue-500",
+    },
+    {
+      icon: Youtube,
+      href: "https://www.youtube.com/@camsust",
+      color: "hover:text-red-500",
+    },
+    {
+      icon: Twitter,
+      href: "https://x.com/camsust",
+      color: "hover:text-cyan-500",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/camsust/",
+      color: "hover:text-blue-500",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/camsust/",
+      color: "hover:text-pink-500",
     },
 
     {
@@ -16,11 +45,16 @@ const Footer: React.FC = () => {
     },
   ];
 
-  const links = [
+  const quickLinks = [
     { name: "Activities", href: "#activities" },
     { name: "Magazine", href: "#magazine" },
     { name: "Research Papers", href: "#research" },
     { name: "FAQ", href: "#faq" },
+  ];
+  const resourceLinks = [
+    { name: "Constitution", href: "/constitution" },
+    { name: "Our Logo", href: "/logo" },
+    { name: "Executive Committee", href: "/ec" },
   ];
 
   return (
@@ -48,7 +82,7 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">Quick Links</h4>
             <ul className="space-y-2">
-              {links.map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
@@ -61,26 +95,20 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Activities & Events */}
+          {/* Resources */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Activities</h4>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li className="flex items-center space-x-2">
-                <Calendar className="w-4 h-4 text-blue-400" />
-                <span>Monthly Study Circles</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Calendar className="w-4 h-4 text-purple-400" />
-                <span>Annual Astro Carnival</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Calendar className="w-4 h-4 text-green-400" />
-                <span>School Outreach Programs</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Calendar className="w-4 h-4 text-yellow-400" />
-                <span>World Space Week (Oct 4-10)</span>
-              </li>
+            <h4 className="text-lg font-semibold text-white">Resources</h4>
+            <ul className="space-y-2">
+              {resourceLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-blue-400 text-sm transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -95,12 +123,21 @@ const Footer: React.FC = () => {
                 <span>SUST, Sylhet, Bangladesh</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300 text-sm">
-                <Mail className="w-4 h-4 text-blue-400" />
+                <Phone className="w-4 h-4 text-blue-400" />
                 <a
-                  href="mailto:contact@cam-sust.org"
+                  href="tel:+8801842267878"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  contact@cam-sust.org
+                  +8801842267878
+                </a>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-300 text-sm">
+                <Mail className="w-4 h-4 text-blue-400" />
+                <a
+                  href="mailto:camsust@gmail.com"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  camsust@gmail.com
                 </a>
               </div>
             </div>
