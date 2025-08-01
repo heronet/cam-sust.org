@@ -49,7 +49,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative items-start z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl lg:max-w-none"
+        className="relative items-start z-10 flex-1 flex flex-col justify-center px-8 lg:px-16 max-w-2xl lg:max-w-none max-md:pt-24 pt-16"
       >
         {/* CAM-SUST Header */}
         <motion.div variants={itemVariants} className="mb-6 lg:mb-8">

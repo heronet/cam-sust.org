@@ -14,7 +14,7 @@ import { Home, Activity, School } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function NavbarDemo() {
+export default function NavbarGlobal() {
   const navItems = [
     {
       name: "Home",

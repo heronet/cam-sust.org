@@ -152,7 +152,7 @@ const ActivityCard: React.FC<{ activity: Activity; index: number }> = ({
 
 const Activities: React.FC = () => {
   return (
-    <div className="min-h-screen  relative overflow-hidden" id="activities">
+    <div className="relative overflow-hidden" id="activities">
       {/* Star Field Background */}
       {/* <StarField /> */}
 
