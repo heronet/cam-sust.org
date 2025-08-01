@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
     { name: "Activities", href: "#activities" },
     { name: "Magazine", href: "#magazine" },
     { name: "Research Papers", href: "#research" },
-    { name: "FAQ", href: "#faq" },
+    { name: "FAQ", href: "/faq" },
   ];
   const resourceLinks = [
     { name: "Constitution", href: "/constitution" },

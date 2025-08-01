@@ -24,7 +24,7 @@ export default function Testimonials() {
       <InfiniteMovingCards
         items={testimonials}
         direction="left"
-        speed="slow"
+        speed="normal"
         pauseOnHover={false}
       />
     </div>

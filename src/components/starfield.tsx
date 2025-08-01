@@ -1,16 +1,19 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useMemo } from "react";
 
 export const StarField: React.FC = () => {
-  const stars = Array.from({ length: 200 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 2 + 0.5,
-    opacity: Math.random() * 0.8 + 0.2,
-    animationDuration: Math.random() * 3 + 2,
-  }));
+  const stars = useMemo(() => {
+    return Array.from({ length: 200 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 2 + 0.5,
+      opacity: Math.random() * 0.8 + 0.2,
+      animationDuration: Math.random() * 3 + 2,
+    }));
+  }, []);
 
   return (
     <motion.div className="absolute inset-0 overflow-hidden">

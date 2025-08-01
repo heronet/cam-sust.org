@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { easeOut, motion } from "motion/react";
 import ExploreBtn from "./explore-btn";
-import { StarField } from "./starfield";
+import { StarField } from "../../../components/starfield";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
