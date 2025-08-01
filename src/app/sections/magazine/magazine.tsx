@@ -1,6 +1,6 @@
 import React from "react";
 import { Download, Users, Star, BookOpen, Eye } from "lucide-react";
-import Header from "../common/header";
+import Header from "../../../components/header";
 
 const Magazine = () => {
   const magazine = {

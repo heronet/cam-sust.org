@@ -9,7 +9,7 @@ import {
   ExternalLink,
   BookOpen,
 } from "lucide-react";
-import Header from "../common/header";
+import Header from "../../../components/header";
 
 interface ResearchPaper {
   id: string;

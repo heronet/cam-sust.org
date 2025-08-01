@@ -1,7 +1,7 @@
-import Activities from "@/components/activities/activities";
-import Hero from "@/components/hero/hero";
-import Magazine from "@/components/magazine/magazine";
-import ResearchPapers from "@/components/research/research";
+import Activities from "./sections/activities/activities";
+import Hero from "./sections/hero/hero";
+import Magazine from "./sections/magazine/magazine";
+import ResearchPapers from "./sections/research/research";
 
 export default function Home() {
   return (

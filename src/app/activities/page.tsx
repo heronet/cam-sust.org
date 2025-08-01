@@ -19,7 +19,7 @@ import {
   Mic,
 } from "lucide-react";
 import Link from "next/link";
-import Header from "@/components/common/header";
+import Header from "@/components/header";
 
 interface Activity {
   id: string;

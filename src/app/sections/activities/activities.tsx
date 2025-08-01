@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { BookOpen, Calendar, Users, Mic, Star, Newspaper } from "lucide-react";
-import Header from "../common/header";
+import Header from "../../../components/header";
 import Link from "next/link";
 
 interface Activity {
