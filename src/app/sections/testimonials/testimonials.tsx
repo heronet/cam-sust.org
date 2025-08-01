@@ -15,16 +15,16 @@ export default function Testimonials() {
   return (
     <div
       id="recommendations"
-      className="flex flex-col antialiased p-4 items-center justify-center relative overflow-hidden"
+      className="flex flex-col py-24 antialiased p-4 items-center justify-center relative overflow-hidden"
     >
       <SectionHeader
-        title="People Talking About Us Section"
+        title="People Talking About Us"
         subtitle="Here are a few words from people who have been associated with us or have seen our work."
       />
       <InfiniteMovingCards
         items={testimonials}
         direction="left"
-        speed="fast"
+        speed="slow"
         pauseOnHover={false}
       />
     </div>
