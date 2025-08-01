@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { BookOpen, Calendar, Users, Mic, Star, Newspaper } from "lucide-react";
-import Header from "../../../components/header";
+import SectionHeader from "../../../components/section-header";
 import Link from "next/link";
 
 interface Activity {
@@ -148,7 +148,7 @@ const Activities: React.FC = () => {
     <div className="relative overflow-hidden" id="activities">
       <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Header */}
-        <Header
+        <SectionHeader
           title="Regular Activities"
           subtitle="Exploring the cosmos through education, observation, and community
         engagement"

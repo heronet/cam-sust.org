@@ -9,7 +9,7 @@ import {
   ExternalLink,
   BookOpen,
 } from "lucide-react";
-import Header from "../../../components/header";
+import SectionHeader from "../../../components/section-header";
 
 interface ResearchPaper {
   id: string;
@@ -170,7 +170,7 @@ const ResearchPapers: React.FC = () => {
     <div className="min-h-screen bg-black/[0.96] antialiased" id="research">
       <div className="relative z-10 pt-16">
         {/* Header */}
-        <Header
+        <SectionHeader
           title="Research Papers"
           subtitle="Discover our amateur to advance astronomical research projects from our club members"
         />

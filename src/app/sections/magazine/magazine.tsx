@@ -1,6 +1,6 @@
 import React from "react";
 import { Download, Users, Star, BookOpen, Eye } from "lucide-react";
-import Header from "../../../components/header";
+import SectionHeader from "../../../components/section-header";
 
 const Magazine = () => {
   const magazine = {
@@ -26,7 +26,7 @@ const Magazine = () => {
       {/* Main Content */}
       <div className="relative z-10">
         {/* Header */}
-        <Header
+        <SectionHeader
           title="Our Magazine"
           subtitle="Introducing our inaugural digital publication - a cosmic journey
             through Bengali skies"

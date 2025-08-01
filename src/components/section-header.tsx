@@ -6,7 +6,7 @@ type Props = {
   subtitle: string;
 };
 
-export default function Header({ title, subtitle }: Props) {
+export default function SectionHeader({ title, subtitle }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -50 }}

@@ -19,7 +19,7 @@ import {
   Mic,
 } from "lucide-react";
 import Link from "next/link";
-import Header from "@/components/header";
+import SectionHeader from "@/components/section-header";
 
 interface Activity {
   id: string;
@@ -340,7 +340,7 @@ const Activities: React.FC = () => {
     <div className="relative pt-16 overflow-hidden">
       <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Header */}
-        <Header
+        <SectionHeader
           title="Our Activities"
           subtitle="Our core mission is to learn and share astronomy through everything we do. Below are some of our common activities. Click on any card to explore them in detail"
         />
