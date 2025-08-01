@@ -6,19 +6,20 @@ import {
   BookOpen,
   Calendar,
   Users,
-  Eye,
   Globe,
-  GraduationCap,
-  MessageCircle,
   Library,
   Newspaper,
   Wrench,
-  FlaskConical,
   Sun,
   Snowflake,
   Search,
+  FileSearch,
+  Speech,
+  Star,
+  Mic,
 } from "lucide-react";
 import Link from "next/link";
+import Header from "@/components/common/header";
 
 interface Activity {
   id: string;
@@ -28,7 +29,7 @@ interface Activity {
   icon: React.ReactNode;
   color: string;
   image: string;
-  category: "educational" | "observational" | "community" | "research";
+  category: "education" | "outreach" | "development" | "research";
   frequency: string;
   duration: string;
   participants: string;
@@ -40,161 +41,162 @@ const activities: Activity[] = [
     title: "STUDY CIRCLE",
     subtitle: "Share knowledge, Increase knowledge",
     description:
-      "Interactive learning sessions where members discuss astronomical topics and share knowledge.",
+      "Our regular program where members discuss various astronomy related topics and share knowledge.",
     icon: <BookOpen className="w-8 h-8" />,
     color: "from-blue-400 to-cyan-300",
     image: "/images/studycircle.webp",
-    category: "educational",
-    frequency: "Monthly",
-    duration: "1 hour",
-    participants: "15-25 members",
+    category: "education",
+    frequency: "Bi-weekly",
+    duration: "1-1.5 hour",
+    participants: "25-40 members",
   },
   {
     id: "cosmania",
     title: "COSMANIA",
     subtitle: "Spread what you know",
     description:
-      "Educational outreach programs conducted in schools across the country to inspire young minds.",
+      "Our outreach program is conducted in schools and colleges across the country to inspire students.",
     icon: <Users className="w-8 h-8" />,
     color: "from-green-400 to-emerald-300",
     image: "/images/cosmania.webp",
-    category: "community",
-    frequency: "Annual",
+    category: "outreach",
+    frequency: "Several a year",
     duration: "Half day",
     participants: "50-200 students",
-  },
-  {
-    id: "cam-talk",
-    title: "CAM-TALK",
-    subtitle: "Conversations that inspire",
-    description:
-      "Regular discussion sessions and talks by experts on cutting-edge astronomical research and discoveries.",
-    icon: <MessageCircle className="w-8 h-8" />,
-    color: "from-purple-400 to-pink-300",
-    image: "/images/camtalk.webp",
-    category: "educational",
-    frequency: "Bi-weekly",
-    duration: "1.5-2 hours",
-    participants: "30-50 attendees",
-  },
-  {
-    id: "stargazing",
-    title: "STARGAZING",
-    subtitle: "Catch a glimpse of the stars",
-    description:
-      "Telescope and naked-eye observations of celestial objects under the night sky.",
-    icon: <Eye className="w-8 h-8" />,
-    color: "from-indigo-400 to-blue-300",
-    image: "/images/stargazing.webp",
-    category: "observational",
-    frequency: "Weekly",
-    duration: "1-2 hours",
-    participants: "10-30 observers",
-  },
-  {
-    id: "world-space-week",
-    title: "WORLD SPACE WEEK",
-    subtitle: "Exploring the universe together",
-    description:
-      "Annual celebration of space achievements with documentaries, seminars, and film screenings.",
-    icon: <Globe className="w-8 h-8" />,
-    color: "from-teal-400 to-cyan-300",
-    image: "/images/spaceweek.webp",
-    category: "community",
-    frequency: "Annual",
-    duration: "One week",
-    participants: "100+ participants",
   },
   {
     id: "astro-carnival",
     title: "ASTRO CARNIVAL",
     subtitle: "Learning in a festive way",
     description:
-      "Annual festival for high school and college students featuring interactive astronomy activities.",
+      "Annual festival for school, college and university students featuring competitions and interactive activities.",
     icon: <Calendar className="w-8 h-8" />,
     color: "from-orange-400 to-yellow-300",
     image: "/images/astrocarnival.webp",
-    category: "community",
+    category: "outreach",
     frequency: "Annual",
-    duration: "Two days",
-    participants: "200-500 students",
+    duration: "2 days",
+    participants: "500-800 students",
+  },
+  {
+    id: "stargazing",
+    title: "STARGAZING",
+    subtitle: "Catch a glimpse of the stars",
+    description:
+      "Telescope and naked-eye observations of stars, planets, galaxies, and nebulae under the night sky.",
+    icon: <Star className="w-8 h-8" />,
+    color: "from-indigo-400 to-blue-300",
+    image: "/images/stargazing.webp",
+    category: "outreach",
+    frequency: "Several a year",
+    duration: "2-3 hours",
+    participants: "30-50 observers",
+  },
+  {
+    id: "cam-talk",
+    title: "CAM-TALK",
+    subtitle: "Conversations that inspire",
+    description:
+      "Talks by experts on astronomy and research where they share and discuss their expertise and works.",
+    icon: <Mic className="w-8 h-8" />,
+    color: "from-purple-400 to-pink-300",
+    image: "/images/camtalk.webp",
+    category: "education",
+    frequency: "Several a year",
+    duration: "1-1.5 hours",
+    participants: "40-60 attendees",
+  },
+  {
+    id: "journal-club",
+    title: "JOURNAL CLUB",
+    subtitle: "Where research meets curiosity",
+    description:
+      "Regular Journal Talks to discuss and analyze recent astronomical research papers and publications.",
+    icon: <Newspaper className="w-8 h-8" />,
+    color: "from-rose-400 to-pink-300",
+    image: "/images/journalclub.webp",
+    category: "research",
+    frequency: "Monthly",
+    duration: "2 hours",
+    participants: "20-30 members",
   },
   {
     id: "seminar",
     title: "SEMINAR",
     subtitle: "We are also the learner",
     description:
-      "Academic seminars featuring distinguished scholars and researchers in astronomy and related fields.",
-    icon: <GraduationCap className="w-8 h-8" />,
+      "Academic seminars on various astronomical topics featuring professors, researchers and scholars.",
+    icon: <Speech className="w-8 h-8" />,
     color: "from-violet-400 to-purple-300",
     image: "/images/seminar.webp",
-    category: "educational",
-    frequency: "Monthly",
+    category: "education",
+    frequency: "Bi-Annual",
     duration: "2-3 hours",
-    participants: "40-80 attendees",
-  },
-  {
-    id: "library",
-    title: "LIBRARY",
-    subtitle: "Gateway to cosmic knowledge",
-    description:
-      "Comprehensive collection of astronomy books, journals, and digital resources for research and learning.",
-    icon: <Library className="w-8 h-8" />,
-    color: "from-amber-400 to-orange-300",
-    image: "/images/library.webp",
-    category: "educational",
-    frequency: "Always available",
-    duration: "Flexible",
-    participants: "Individual access",
-  },
-  {
-    id: "journal-club",
-    title: "JOURNAL CLUB",
-    subtitle: "Exploring cutting-edge research",
-    description:
-      "Regular meetings to discuss and analyze recent astronomical research papers and publications.",
-    icon: <Newspaper className="w-8 h-8" />,
-    color: "from-rose-400 to-pink-300",
-    image: "/images/journalclub.webp",
-    category: "research",
-    frequency: "Bi-weekly",
-    duration: "2 hours",
-    participants: "12-20 members",
+    participants: "50-80 attendees",
   },
   {
     id: "workshop",
     title: "WORKSHOP",
     subtitle: "Hands-on learning experience",
     description:
-      "Practical workshops on telescope making, astrophotography, data analysis, and observational techniques.",
+      "Practical workshops on asteroid hunting, observational & computational astronomy and astrophysics.",
     icon: <Wrench className="w-8 h-8" />,
     color: "from-cyan-400 to-blue-300",
     image: "/images/workshop.webp",
-    category: "educational",
-    frequency: "Monthly",
+    category: "education",
+    frequency: "Bi-Annual",
     duration: "4-6 hours",
-    participants: "15-25 participants",
+    participants: "30-40 participants",
+  },
+  {
+    id: "world-space-week",
+    title: "WORLD SPACE WEEK",
+    subtitle: "Celebrate with the world",
+    description:
+      "From 4 th to 10 th October we celebrate “World Space Week” with the whole world through many events.",
+    icon: <Globe className="w-8 h-8" />,
+    color: "from-teal-400 to-cyan-300",
+    image: "/images/spaceweek.webp",
+    category: "outreach",
+    frequency: "Annual",
+    duration: "One week",
+    participants: "100+ participants",
+  },
+
+  {
+    id: "library",
+    title: "LIBRARY",
+    subtitle: "Read, Read & Read",
+    description:
+      "Read from our collection of astronomy books, magazines and  journals for research and learning.",
+    icon: <Library className="w-8 h-8" />,
+    color: "from-amber-400 to-orange-300",
+    image: "/images/library.webp",
+    category: "education",
+    frequency: "Always available",
+    duration: "Flexible",
+    participants: "Individual access",
   },
   {
     id: "research-project",
     title: "RESEARCH & PROJECT",
-    subtitle: "Contributing to astronomical knowledge",
+    subtitle: "Explore, Analyze, Contribute",
     description:
-      "Independent and collaborative research projects on various astronomical phenomena and observations.",
-    icon: <FlaskConical className="w-8 h-8" />,
+      "Our latest initiative for beginners to advance research projects on various astronomical topics.",
+    icon: <FileSearch className="w-8 h-8" />,
     color: "from-emerald-400 to-teal-300",
     image: "/images/research.webp",
     category: "research",
     frequency: "Ongoing",
-    duration: "3-12 months",
+    duration: "As needed",
     participants: "5-15 researchers",
   },
   {
     id: "summer-winter-school",
     title: "SUMMER/WINTER SCHOOL",
-    subtitle: "Intensive learning programs",
+    subtitle: "Learn at academic break",
     description:
-      "Seasonal intensive courses and camps focusing on specific astronomical topics and skills.",
+      "Week-long lectures and hands-on sessions by experts focusing on astronomy and astrophysics.",
     icon: (
       <div className="flex">
         <Sun className="w-4 h-4" />
@@ -203,31 +205,31 @@ const activities: Activity[] = [
     ),
     color: "from-yellow-400 to-red-300",
     image: "/images/school.webp",
-    category: "educational",
-    frequency: "Bi-annual",
-    duration: "5-10 days",
-    participants: "20-40 students",
+    category: "education",
+    frequency: "Annual",
+    duration: "1-2 weeks",
+    participants: "30-40 students",
   },
 ];
 
 const categories = [
-  { id: "all", name: "All Activities", color: "from-gray-400 to-gray-300" },
+  { id: "all", name: "All", color: "from-gray-400 to-gray-300" },
   {
-    id: "educational",
-    name: "Educational",
+    id: "education",
+    name: "Education",
     color: "from-blue-400 to-cyan-300",
   },
   {
-    id: "observational",
-    name: "Observational",
-    color: "from-indigo-400 to-purple-300",
-  },
-  {
-    id: "community",
-    name: "Community",
+    id: "outreach",
+    name: "Outreach",
     color: "from-green-400 to-emerald-300",
   },
   { id: "research", name: "Research", color: "from-orange-400 to-red-300" },
+  {
+    id: "development",
+    name: "Development",
+    color: "from-indigo-400 to-indigo-300",
+  },
 ];
 
 const ActivityCard: React.FC<{ activity: Activity; index: number }> = ({
@@ -338,10 +340,10 @@ const Activities: React.FC = () => {
     <div className="relative pt-16 overflow-hidden">
       <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Header */}
-        {/* <Header
-          title="All Activities"
-          subtitle="Comprehensive programs designed to explore, learn, and contribute to astronomical knowledge"
-        /> */}
+        <Header
+          title="Our Activities"
+          subtitle="Our core mission is to learn and share astronomy through everything we do. Below are some of our common activities. Click on any card to explore them in detail"
+        />
 
         {/* Search and Filter Controls */}
         <div className="mb-12 space-y-6">

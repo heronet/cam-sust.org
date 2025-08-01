@@ -2,14 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import {
-  BookOpen,
-  Calendar,
-  Users,
-  GraduationCap,
-  Mic,
-  Star,
-} from "lucide-react";
+import { BookOpen, Calendar, Users, Mic, Star, Newspaper } from "lucide-react";
 import Header from "../common/header";
 import Link from "next/link";
 
@@ -29,7 +22,7 @@ const activities: Activity[] = [
     title: "STUDY CIRCLE",
     subtitle: "Share knowledge, Increase knowledge",
     description:
-      "Everyone you will ever meet knows something you do not. That is why we arrange several study circles per month where we meet each other and discuss certain topics related to astronomy",
+      "Everyone you will ever meet knows something you do not. That is why we arrange several study circles per month where we meet each other and discuss certain topics related to astronomy.",
     icon: <BookOpen className="w-8 h-8" />,
     color: "from-blue-400 to-cyan-300",
     image: "/images/studycircle.webp",
@@ -39,7 +32,7 @@ const activities: Activity[] = [
     title: "COSMANIA",
     subtitle: "Spread what you know",
     description:
-      "If you have the knowledge, let others light their candles in it. That is why we organize school programs in different schools & colleges throughout the country since we are trying to spread curiosity among all",
+      "If you have the knowledge, let others light their candles in it. That is why we organize school programs in different schools & colleges throughout the country since we are trying to spread curiosity among all.",
     icon: <Users className="w-8 h-8" />,
     color: "from-green-400 to-emerald-300",
     image: "/images/cosmania.webp",
@@ -49,7 +42,7 @@ const activities: Activity[] = [
     title: "ASTRO CARNIVAL",
     subtitle: "Learning in a festive way",
     description:
-      "We organize an Astro carnival once a year for all school, college, madrasa and university students throughout the country. Their participation in the carnival makes our work worthwhile. Their curious eyes tell the rest",
+      "We organize an Astro carnival once a year for all school, college, madrasa and university students throughout the country. Their participation in the carnival makes our work worthwhile. Their curious eyes tell the rest.",
     icon: <Calendar className="w-8 h-8" />,
     color: "from-orange-400 to-yellow-300",
     image: "/images/astrocarnival.webp",
@@ -59,7 +52,7 @@ const activities: Activity[] = [
     title: "STAR GAZING",
     subtitle: "Catch a glimpse of the stars",
     description:
-      "Looking at stars, planets, galaxies, and nebulae we realize that we're just one tiny part of that. Sometimes, we CAM people, gaze into the night sky with a telescope but regularly we do naked-eye stargazing",
+      "Looking at stars, planets, galaxies, and nebulae we realize that we're just one tiny part of that. Sometimes, we CAM people, gaze into the night sky with a telescope but regularly we do naked-eye stargazing.",
     icon: <Star className="w-8 h-8" />,
     color: "from-indigo-400 to-blue-300",
     image: "/images/stargazing.webp",
@@ -79,8 +72,8 @@ const activities: Activity[] = [
     title: "JOURNAL CLUB",
     subtitle: "Where research meets curiosity",
     description:
-      "We want to learn about the important and recent works on astronomy. That is why we arrange regular journal talks to discuss and analyze recent astronomical research papers and publications",
-    icon: <GraduationCap className="w-8 h-8" />,
+      "We want to learn about the important and recent works on astronomy. That is why we arrange regular journal talks to discuss and analyze recent astronomical research papers and publications.",
+    icon: <Newspaper className="w-8 h-8" />,
     color: "from-violet-400 to-purple-300",
     image: "/images/seminar.webp",
   },
@@ -153,16 +146,6 @@ const ActivityCard: React.FC<{ activity: Activity; index: number }> = ({
 const Activities: React.FC = () => {
   return (
     <div className="relative overflow-hidden" id="activities">
-      {/* Star Field Background */}
-      {/* <StarField /> */}
-
-      {/* Subtle Space Nebula Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-10 w-80 h-80 bg-cyan-400/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-indigo-400/5 rounded-full blur-3xl" />
-      </div>
-
       <div className="container mx-auto px-6 py-16 relative z-10">
         {/* Header */}
         <Header

@@ -82,63 +82,65 @@ export default function Hero() {
             astronomy{" "}
             <span className="text-blue-400 font-medium">research</span> and{" "}
             <span className="text-purple-400 font-medium">outreach</span>{" "}
-            organization of Shahjalal University of Science and Technology
-            (SUST), Bangladesh. Join our community of curious minds as we are
-            pursuing the infinity together
+            organization founded in 2012 at Shahjalal University of Science and
+            Technology (SUST), Bangladesh. Join our community of curious minds
+            as we are pursuing the infinity together.
           </p>
         </motion.div>
 
-        {/* Impact Numbers */}
-        <motion.div
-          variants={itemVariants}
-          className="lg:grid flex flex-wrap lg:grid-cols-5 gap-3 lg:gap-4 mb-8 lg:mb-10"
-        >
-          {[
-            { number: "13", label: "Years of Excellence" },
-            { number: "67+", label: "Study Circle" },
-            { number: "9", label: "Cosmania" },
-            { number: "4", label: "Astro Carnival" },
-            { number: "4", label: "Research Paper" },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center p-2 lg:p-3 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:bg-white/[0.05] transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="text-lg md:text-xl lg:text-2xl font-bold text-blue-400 mb-1">
-                {stat.number}
-              </div>
-              <div className="text-neutral-400 text-xs md:text-sm font-light">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Call to Action */}
-        <ExploreBtn />
-
-        {/* Scroll Indicator */}
-        <motion.div
-          variants={itemVariants}
-          className="flex items-center mt-8 lg:mt-0"
-        >
-          <p className="text-neutral-500 text-xs md:text-sm mr-4 font-light">
-            Discover more about us
-          </p>
+        <div className="flex flex-col items-center lg:items-start">
+          {/* Impact Numbers */}
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-4 h-6 border border-neutral-500 rounded-full flex justify-center opacity-70"
+            variants={itemVariants}
+            className="lg:grid flex flex-wrap max-lg:justify-center lg:grid-cols-5 gap-3 lg:gap-4 mb-8 lg:mb-10"
           >
+            {[
+              { number: "67+", label: "Study Circle" },
+              { number: "9", label: "Cosmania" },
+              { number: "4", label: "Astro Carnival" },
+              { number: "4", label: "Research Paper" },
+              { number: "13", label: "Years of Journey" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center p-2 lg:p-3 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:bg-white/[0.05] transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="text-lg md:text-xl lg:text-2xl font-bold text-blue-400 mb-1">
+                  {stat.number}
+                </div>
+                <div className="text-neutral-400 text-xs md:text-sm font-light">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Call to Action */}
+          <ExploreBtn />
+
+          {/* Scroll Indicator */}
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center my-8 lg:mt-0"
+          >
+            <p className="text-neutral-500 text-xs md:text-sm mr-4 font-light">
+              Discover more about us
+            </p>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-0.5 h-1.5 bg-neutral-500 rounded-full mt-1"
-            />
+              className="w-4 h-6 border border-neutral-500 rounded-full flex justify-center opacity-70"
+            >
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="w-0.5 h-1.5 bg-neutral-500 rounded-full mt-1"
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* Solar System - Right Side */}

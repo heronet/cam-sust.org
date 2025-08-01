@@ -172,9 +172,7 @@ const ResearchPapers: React.FC = () => {
         {/* Header */}
         <Header
           title="Research Papers"
-          subtitle="Discover groundbreaking astronomical research from our club
-              members and collaborators. Explore the latest findings that push
-              the boundaries of our understanding of the cosmos."
+          subtitle="Discover our amateur to advance astronomical research projects from our club members"
         />
 
         {/* Search and Filters */}
