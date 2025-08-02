@@ -190,7 +190,7 @@ const FAQPage = () => {
                 }`}
               >
                 <div className="px-6 pb-6">
-                  <div className="ml-14 text-gray-300 leading-relaxed whitespace-pre-wrap">
+                  <div className="md:ml-14 text-gray-300 leading-relaxed whitespace-pre-wrap">
                     {faq.answer}
                   </div>
                 </div>
