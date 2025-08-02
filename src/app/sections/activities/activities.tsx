@@ -150,8 +150,7 @@ const Activities: React.FC = () => {
         {/* Header */}
         <SectionHeader
           title="Regular Activities"
-          subtitle="Exploring the cosmos through education, observation, and community
-        engagement"
+          subtitle="Exploring the Universe through education, outreach, research and development"
         />
 
         {/* Activities Grid */}
@@ -188,8 +187,8 @@ const Activities: React.FC = () => {
             </svg>
           </Link>
           <p className="text-gray-400 text-sm mt-4 max-w-md mx-auto">
-            Discover our complete range of educational programs, workshops, and
-            community events
+            Discover our complete range of community events, educational and
+            outreach programs.
           </p>
         </motion.div>
       </div>

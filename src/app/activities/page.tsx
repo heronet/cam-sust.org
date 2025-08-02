@@ -139,7 +139,7 @@ const activities: Activity[] = [
     title: "WORKSHOP",
     subtitle: "Hands-on learning experience",
     description:
-      "Practical workshops on asteroid hunting, observational & computational astronomy and astrophysics.",
+      "Practical sessions on amateur projects, astrophysics, observational & computational astronomy.",
     icon: <Wrench className="w-8 h-8" />,
     color: "from-cyan-400 to-blue-300",
     image: "/images/workshop.webp",

@@ -6,7 +6,7 @@ import SectionHeader from "@/components/section-header";
 import { Info } from "lucide-react";
 
 const FAQPage = () => {
-  const [language, setLanguage] = useState<"en" | "bn">("en");
+  const [language, setLanguage] = useState<"en" | "bn">("bn");
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
   const toggleAccordion = (index: number | null) => {
@@ -126,17 +126,6 @@ const FAQPage = () => {
           <div className="flex justify-center mb-8">
             <div className="bg-gray-900 rounded-lg p-1 border border-gray-800 flex">
               <button
-                onClick={() => setLanguage("en")}
-                className={`px-6 py-3 rounded-md transition-all w-full duration-300 flex items-center gap-2 ${
-                  language === "en"
-                    ? "bg-gray-800 text-white shadow-md"
-                    : "text-gray-500 hover:text-gray-300"
-                }`}
-              >
-                <Globe className="w-4 h-4" />
-                English
-              </button>
-              <button
                 onClick={() => setLanguage("bn")}
                 className={`px-6 py-3 rounded-md transition-all w-full duration-300 flex items-center gap-2 ${
                   language === "bn"
@@ -146,6 +135,17 @@ const FAQPage = () => {
               >
                 <Globe className="w-4 h-4" />
                 বাংলা
+              </button>
+              <button
+                onClick={() => setLanguage("en")}
+                className={`px-6 py-3 rounded-md transition-all w-full duration-300 flex items-center gap-2 ${
+                  language === "en"
+                    ? "bg-gray-800 text-white shadow-md"
+                    : "text-gray-500 hover:text-gray-300"
+                }`}
+              >
+                <Globe className="w-4 h-4" />
+                English
               </button>
             </div>
           </div>
