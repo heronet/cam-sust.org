@@ -118,8 +118,8 @@ const FAQPage = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <SectionHeader
-            title="Frequently Asked Questions"
-            subtitle="প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী"
+            title="FAQ"
+            subtitle="Find answers to some common questions about CAM-SUST and our activities. If you don’t find what you’re looking for here, feel free to reach out to us via phone or email"
           />
 
           {/* Language Toggle */}

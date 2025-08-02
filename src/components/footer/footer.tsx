@@ -9,6 +9,7 @@ import {
   Youtube,
   Phone,
 } from "lucide-react";
+import Flickr from "@/lib/icons/flickr";
 
 const Footer: React.FC = () => {
   const socials = [
@@ -37,16 +38,15 @@ const Footer: React.FC = () => {
       href: "https://www.instagram.com/camsust/",
       color: "hover:text-pink-500",
     },
-
     {
-      icon: Mail,
-      href: "mailto:contact@cam-sust.org",
+      icon: Flickr,
+      href: "https://www.flickr.com/photos/camsust",
       color: "hover:text-red-400",
     },
   ];
 
   const quickLinks = [
-    { name: "Activities", href: "#activities" },
+    { name: "Activities", href: "#/activities" },
     { name: "Magazine", href: "#magazine" },
     { name: "Research Papers", href: "#research" },
     { name: "FAQ", href: "/faq" },
@@ -72,9 +72,8 @@ const Footer: React.FC = () => {
               <span>Astronomy Research & Outreach Organization</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Copernicus Astronomical Memorial - The only astronomy organization
-              of SUST. Exploring the cosmos through education, observation, and
-              community engagement.
+              Copernicus Astronomical Memorial of SUST- a platform for all
+              Astronomy & Astrophysics lovers in Bangladesh.
             </p>
           </div>
 
@@ -114,9 +113,7 @@ const Footer: React.FC = () => {
 
           {/* Contact & Social */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">
-              Connect With Us
-            </h4>
+            <h4 className="text-lg font-semibold text-white">Contact Us</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-2 text-gray-300 text-sm">
                 <MapPin className="w-4 h-4 text-red-400" />
