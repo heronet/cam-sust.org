@@ -100,7 +100,7 @@ const LibraryPage = () => {
         >
           <h2 className="text-2xl font-bold mb-8 text-center">Library Rules</h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             {/* Bengali Rules */}
             <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
               <h3 className="text-xl font-semibold mb-6 text-gray-200">
@@ -208,7 +208,7 @@ const LibraryPage = () => {
             </div>
 
             {/* English Rules */}
-            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+            {/* <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
               <h3 className="text-xl font-semibold mb-6 text-gray-200">
                 Library Rules
               </h3>
@@ -312,7 +312,7 @@ const LibraryPage = () => {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </section>
