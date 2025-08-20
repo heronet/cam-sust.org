@@ -44,20 +44,20 @@ const CosmaniaPage: React.FC = () => {
   // Mock images for different sections
   const sectionImages: Record<keyof ImageIndexState, string[]> = {
     astro: [
-      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&h=400&fit=crop",
+      "/images/activities/cosmania/astro1.webp",
+      "/images/activities/cosmania/astro2.webp",
     ],
     poster: [
-      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&h=400&fit=crop",
+      "/images/activities/cosmania/poster1.webp",
+      "/images/activities/cosmania/poster2.webp",
     ],
     art: [
-      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1574169208507-84376144848b?w=600&h=400&fit=crop",
+      "/images/activities/cosmania/art.webp",
+      "/images/activities/cosmania/vr.webp",
     ],
     plane: [
-      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=600&h=400&fit=crop",
+      "/images/activities/cosmania/plane1.webp",
+      "/images/activities/cosmania/plane2.webp",
     ],
   };
 
@@ -364,13 +364,14 @@ const CosmaniaPage: React.FC = () => {
                 </div>
                 <div className="relative">
                   <div className="aspect-video bg-black/40 rounded-lg flex items-center justify-center border border-gray-800/50">
-                    <div className="text-center">
-                      <Rocket className="w-14 h-14 mx-auto mb-4 text-gray-400" />
-                      <p className="text-gray-400 font-light">YouTube Video</p>
-                      <p className="text-sm text-gray-500 mt-2 font-light">
-                        Water Rocket Launch Demo
-                      </p>
-                    </div>
+                    <iframe
+                      className="w-full h-full rounded-lg"
+                      src="https://www.youtube.com/embed/rp7vnDb8TS4"
+                      title="Water Rocket Launching | Cosmania, Tarapur Primary School, Sylhet | CAM-SUST"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 </div>
               </div>
