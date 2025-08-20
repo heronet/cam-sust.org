@@ -61,6 +61,25 @@ const CosmaniaPage: React.FC = () => {
     ],
   };
 
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => {
+        const newState = { ...prev };
+        Object.keys(newState).forEach((section) => {
+          const sectionKey = section as keyof ImageIndexState;
+          const imagesLength = sectionImages[sectionKey].length;
+          if (imagesLength > 1) {
+            newState[sectionKey] = (prev[sectionKey] + 1) % imagesLength;
+          }
+        });
+        return newState;
+      });
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  });
+
   const nextImage = (section: keyof ImageIndexState): void => {
     setCurrentImageIndex((prev) => ({
       ...prev,
@@ -207,17 +226,6 @@ const CosmaniaPage: React.FC = () => {
                 <div className="h-px bg-gray-600 w-16"></div>
               </div>
 
-              {/* Subtitle with enhanced typography */}
-              {/* <div className="mb-8">
-                <p className="text-gray-300 font-light tracking-wide uppercase text-xs md:text-sm mb-2 opacity-70">
-                  Symbol of
-                </p>
-                <p className="text-2xl md:text-3xl text-gray-200 font-light tracking-wide">
-                  Astronomy Outreach Events
-                </p>
-              </div> */}
-
-              {/* Enhanced description with better visual hierarchy */}
               <div className="max-w-3xl mx-auto relative">
                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
                   Our outreach program is conducted in schools and colleges
@@ -225,7 +233,7 @@ const CosmaniaPage: React.FC = () => {
                 </p>
               </div>
 
-              {/* Floating elements for visual interest */}
+              {/* Floating elements */}
               <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gray-500 rounded-full animate-pulse opacity-30"></div>
               <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-gray-400 rounded-full animate-pulse opacity-40 delay-1000"></div>
               <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-gray-500 rounded-full animate-pulse opacity-20 delay-2000"></div>
