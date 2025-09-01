@@ -11,6 +11,8 @@ import {
   ChevronRight,
   Presentation,
   Wallpaper,
+  MapPin,
+  Calendar,
 } from "lucide-react";
 
 interface ImageIndexState {
@@ -33,6 +35,140 @@ interface ImageSliderProps {
   images: string[];
 }
 
+interface School {
+  id: number;
+  name: string;
+  district: string;
+  years: string[];
+  latitude: number;
+  longitude: number;
+}
+
+// Declare global L for Leaflet
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    L: any | unknown;
+  }
+}
+
+// Custom Map Component
+const InteractiveMap: React.FC<{ schools: School[] }> = ({ schools }) => {
+  const mapRef = React.useRef<HTMLDivElement>(null);
+  const [mapLoaded, setMapLoaded] = useState(false);
+
+  useEffect(() => {
+    // Load Leaflet CSS and JS
+    const loadLeaflet = async () => {
+      // Load CSS
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+      document.head.appendChild(link);
+
+      // Load JS
+      const script = document.createElement("script");
+      script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+      script.onload = () => {
+        setMapLoaded(true);
+      };
+      document.head.appendChild(script);
+    };
+
+    loadLeaflet();
+  }, []);
+
+  useEffect(() => {
+    if (!mapLoaded || !mapRef.current || !window.L) return;
+
+    // Initialize map centered on Bangladesh
+    const map = window.L.map(mapRef.current).setView([23.685, 90.3563], 7);
+
+    // Add tile layer
+    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+    }).addTo(map);
+
+    // Custom icon for schools
+    const schoolIcon = window.L.divIcon({
+      html: `
+        <div style="
+          background-color: #DC2626; 
+          border: 3px solid #FFFFFF; 
+          border-radius: 50%; 
+          width: 18px; 
+          height: 18px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+          position: relative;
+        ">
+          <div style="
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 8px solid #DC2626;
+          "></div>
+        </div>
+      `,
+      className: "custom-school-marker",
+      iconSize: [18, 26],
+      iconAnchor: [9, 26],
+    });
+
+    // Add markers for each school
+    schools.forEach((school) => {
+      const marker = window.L.marker([school.latitude, school.longitude], {
+        icon: schoolIcon,
+      }).addTo(map);
+
+      // Create popup content
+      const popupContent = `
+        <div style="color: #1F2937; font-family: system-ui;">
+          <h3 style="font-size: 14px; font-weight: bold; margin: 0 0 8px 0; color: #111827;">${
+            school.name
+          }</h3>
+          <p style="margin: 0 0 4px 0; font-size: 12px; color: #374151;"><strong>District:</strong> ${
+            school.district
+          }</p>
+          <p style="margin: 0; font-size: 12px; color: #374151;"><strong>Years:</strong> ${school.years.join(
+            ", "
+          )}</p>
+        </div>
+      `;
+
+      marker.bindPopup(popupContent);
+    });
+
+    // Cleanup function
+    return () => {
+      map.remove();
+    };
+  }, [mapLoaded, schools]);
+
+  if (!mapLoaded) {
+    return (
+      <div className="w-full h-full flex items-center justify-center text-gray-300 bg-black/40 rounded-lg border border-gray-800/50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-300 mx-auto mb-4"></div>
+          <p className="text-sm">Loading map...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={mapRef}
+      className="w-full h-full rounded-lg border border-gray-800/50"
+      style={{ minHeight: "500px" }}
+    />
+  );
+};
+
 const CosmaniaPage: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState<ImageIndexState>({
     astro: 0,
@@ -40,6 +176,130 @@ const CosmaniaPage: React.FC = () => {
     art: 0,
     plane: 0,
   });
+
+  // Schools data
+  const schools: School[] = [
+    {
+      id: 1,
+      name: "SUST School and College",
+      district: "Sylhet",
+      years: ["2013"],
+      latitude: 24.91649721625626,
+      longitude: 91.83094062111402,
+    },
+    {
+      id: 2,
+      name: "Women's Model College",
+      district: "Sylhet",
+      years: ["2015", "2023"],
+      latitude: 24.899557982981015,
+      longitude: 91.8778506939985,
+    },
+    {
+      id: 3,
+      name: "Bhabanipur Haji Ibrahim Higher Secondary School",
+      district: "Barisal",
+      years: ["2017", "2018"],
+      latitude: 22.854080497835614,
+      longitude: 90.17544732462254,
+    },
+    {
+      id: 4,
+      name: "Sunamganj Govt. College",
+      district: "Sunamganj",
+      years: ["2019", "2020"],
+      latitude: 25.064448692766334,
+      longitude: 91.41473042469589,
+    },
+    {
+      id: 5,
+      name: "Annada Government High School",
+      district: "Brahmanbaria",
+      years: ["2019"],
+      latitude: 23.977724835176883,
+      longitude: 91.10728562465901,
+    },
+    {
+      id: 6,
+      name: "Govt. Model Girls High School",
+      district: "Brahmanbaria",
+      years: ["2019"],
+      latitude: 24.01738667997163,
+      longitude: 91.10210449083179,
+    },
+    {
+      id: 7,
+      name: "Sonargaon Kazi Fazlul Haque Women's College",
+      district: "Narayanganj",
+      years: ["2020"],
+      latitude: 23.638574293869716,
+      longitude: 90.5982709669749,
+    },
+    {
+      id: 8,
+      name: "Bridge Academy",
+      district: "Sunamganj",
+      years: ["2022"],
+      latitude: 24.933407726945784,
+      longitude: 91.67564539956528,
+    },
+    {
+      id: 9,
+      name: "Jaflong Valley Boarding School",
+      district: "Sylhet",
+      years: ["2022"],
+      latitude: 25.173993185720295,
+      longitude: 92.06975303819027,
+    },
+    {
+      id: 10,
+      name: "KIN School",
+      district: "Sylhet",
+      years: ["2017", "2019", "2023", "2025"],
+      latitude: 24.916805121634983,
+      longitude: 91.83079233818141,
+    },
+    {
+      id: 11,
+      name: "Reaz Public School",
+      district: "Narayanganj",
+      years: ["2023"],
+      latitude: 23.634804143514447,
+      longitude: 90.52334328232064,
+    },
+    {
+      id: 12,
+      name: "Sylhet Grammar School",
+      district: "Sylhet",
+      years: ["2023"],
+      latitude: 24.898378279472773,
+      longitude: 91.87833219399846,
+    },
+    {
+      id: 13,
+      name: "Jalalabad College",
+      district: "Sylhet",
+      years: ["2023"],
+      latitude: 24.88802390009046,
+      longitude: 91.88174335352623,
+    },
+    {
+      id: 14,
+      name: "Ragib-Rabeya Primary School, Tarapur",
+      district: "Sylhet",
+      years: ["2024"],
+      latitude: 24.916796113972662,
+      longitude: 91.85423796031222,
+    },
+    {
+      id: 15,
+      name: "Chanpur High School, Tahipur",
+      district: "Sunamganj",
+      years: ["2024"],
+      latitude: 25.190451107200992,
+      longitude: 91.22094981364614,
+    },
+  ];
 
   // Mock images for different sections
   const sectionImages: Record<keyof ImageIndexState, string[]> = {
@@ -386,6 +646,85 @@ const CosmaniaPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Locations Section */}
+          <div className="mt-24">
+            <h2 className="text-4xl font-bold mb-10 text-center text-gray-100">
+              <MapPin className="inline-block w-8 h-8 mr-3 text-gray-300" />
+              Our Journey Across Bangladesh
+            </h2>
+            <p className="text-lg text-gray-300 mb-12 text-center max-w-4xl mx-auto leading-relaxed font-light">
+              Over the years, Cosmania has reached {schools.length} educational
+              institutions across Bangladesh, inspiring thousands of students
+              with the wonders of astronomy and science.
+            </p>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Interactive Map */}
+              <div className="lg:col-span-2">
+                <div className="bg-gray-900/20 backdrop-blur-sm rounded-lg p-6 border border-gray-800/30 h-[600px]">
+                  <div className="h-full">
+                    <InteractiveMap schools={schools} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Schools List */}
+              <div className="lg:col-span-1">
+                <div className="bg-gray-900/20 backdrop-blur-sm rounded-lg p-6 border border-gray-800/30 h-[600px] flex flex-col">
+                  <h3 className="text-2xl font-bold mb-6 text-gray-100">
+                    Schools & Colleges
+                  </h3>
+                  <div className="flex-1 overflow-y-auto pr-2 space-y-4 scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
+                    {schools.map((school) => (
+                      <div
+                        key={school.id}
+                        className="p-4 bg-gray-800/30 rounded-lg border border-gray-700/30 hover:bg-gray-800/50 transition-colors duration-200 cursor-pointer"
+                      >
+                        <h4 className="font-semibold text-gray-100 text-sm mb-2">
+                          {school.name}
+                        </h4>
+                        <div className="flex items-center text-gray-400 text-xs mb-1">
+                          <MapPin className="w-3 h-3 mr-1 flex-shrink-0" />
+                          <span>{school.district}</span>
+                        </div>
+                        <div className="flex items-center text-gray-400 text-xs">
+                          <Calendar className="w-3 h-3 mr-1 flex-shrink-0" />
+                          <span>{school.years.join(", ")}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Statistics */}
+            <div className="mt-12 grid md:grid-cols-3 gap-6">
+              <div className="bg-gray-900/20 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-800/30">
+                <div className="text-3xl font-bold text-gray-100 mb-2">
+                  {schools.length}
+                </div>
+                <div className="text-gray-300 font-medium">
+                  Schools & Colleges
+                </div>
+              </div>
+              <div className="bg-gray-900/20 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-800/30">
+                <div className="text-3xl font-bold text-gray-100 mb-2">
+                  {Array.from(new Set(schools.map((s) => s.district))).length}
+                </div>
+                <div className="text-gray-300 font-medium">
+                  Districts Covered
+                </div>
+              </div>
+              <div className="bg-gray-900/20 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-800/30">
+                <div className="text-3xl font-bold text-gray-100 mb-2">12+</div>
+                <div className="text-gray-300 font-medium">
+                  Years of Outreach
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Contact Section */}
           <div className="mt-24 bg-gray-900/20 backdrop-blur-sm rounded-lg p-12 text-center border border-gray-800/30">
             <h2 className="text-4xl font-bold mb-10 text-gray-100">
@@ -421,6 +760,26 @@ const CosmaniaPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .scrollbar-thin {
+          scrollbar-width: thin;
+        }
+        .scrollbar-track-gray-800::-webkit-scrollbar-track {
+          background-color: rgba(31, 41, 55, 0.5);
+          border-radius: 0.375rem;
+        }
+        .scrollbar-thumb-gray-600::-webkit-scrollbar-thumb {
+          background-color: rgba(75, 85, 99, 0.8);
+          border-radius: 0.375rem;
+        }
+        .scrollbar-thumb-gray-600::-webkit-scrollbar-thumb:hover {
+          background-color: rgba(107, 114, 128, 1);
+        }
+        .scrollbar-thin::-webkit-scrollbar {
+          width: 6px;
+        }
+      `}</style>
     </div>
   );
 };
