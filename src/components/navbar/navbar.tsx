@@ -10,7 +10,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { Home, Activity, School } from "lucide-react";
+import { Home, Activity, School, InfoIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -32,9 +32,9 @@ export default function NavbarGlobal() {
       icon: <School className="h-4 w-4 text-white" />,
     },
     {
-      name: "Summer School",
-      link: "https://summerschool.cam-sust.org",
-      icon: <School className="h-4 w-4 text-white" />,
+      name: "About",
+      link: "/about",
+      icon: <InfoIcon className="h-4 w-4 text-white" />,
     },
   ];
 
