@@ -46,9 +46,9 @@ const Footer: React.FC = () => {
   ];
 
   const quickLinks = [
-    { name: "Activities", href: "#/activities" },
-    { name: "Magazine", href: "#magazine" },
-    { name: "Research Papers", href: "#research" },
+    { name: "Activities", href: "/#activities" },
+    { name: "Magazine", href: "/#magazine" },
+    { name: "Research Papers", href: "/#research" },
     { name: "FAQ", href: "/faq" },
   ];
   const resourceLinks = [
