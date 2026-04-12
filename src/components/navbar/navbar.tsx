@@ -28,7 +28,7 @@ export default function NavbarGlobal() {
     },
     {
       name: "Research",
-      link: "/#research",
+      link: "/research/research_papers",
       icon: <School className="h-4 w-4 text-white" />,
     },
     {

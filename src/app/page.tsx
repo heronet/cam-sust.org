@@ -10,7 +10,6 @@ export default function Home() {
       <Hero />
       <Activities />
       <Magazine />
-      <ResearchPapers />
       <Testimonials />
     </main>
   );
